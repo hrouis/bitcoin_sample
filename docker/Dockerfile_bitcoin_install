@@ -27,6 +27,3 @@ RUN (cd bitcoin  && ./autogen.sh && \
                       strip src/bitcoin-cli && \
                       strip src/bitcoin-tx && \
                       make install )
-COPY bitcoin.conf /root/.bitcoin/bitcoin.conf
-EXPOSE 18445/tcp
-ENTRYPOINT ["/usr/local/bin/bitcoind"]

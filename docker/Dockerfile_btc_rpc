@@ -2,7 +2,8 @@ FROM node:alpine
 
 RUN npm install -g btc-rpc-explorer
 
-COPY btc-rpc-explorer.env /etc/btc-rpc-explorer/.env
+COPY conf/btc-rpc-explorer.env /etc/btc-rpc-explorer/.env
+
 
 EXPOSE 3002
 

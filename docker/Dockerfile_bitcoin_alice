@@ -1,0 +1,8 @@
+FROM bitcoin-install
+
+
+COPY conf/bitcoin_alice_node.conf /root/.bitcoin/bitcoin.conf
+
+EXPOSE 18445/tcp
+
+ENTRYPOINT ["/usr/local/bin/bitcoind"]
