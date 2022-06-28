@@ -9,8 +9,7 @@ docker run --rm  bitcoin-bob-node
 Configurer l'explorateur de noeud pour se connecter à l'API d'Alice
 
 Lancer l'explorateur de noeud:
-docker run --rm  -p 3002:3002 -e BTCEXP_HOST=0.0.0.0 bitcoin-explorer &
-
+docker run --rm  -p 3002:3002 -e BTCEXP_HOST=0.0.0.0 bitcoin-explorer
 
 http://localhost:3002
 
@@ -18,8 +17,8 @@ http://localhost:3002
 bitcoin-cli -regtest --rpcuser=alice --rpcpassword=password getwalletinfo
 
 Connexion entre bob et Alice
-bitcoin-cli -regtest --rpcuser=alice --rpcpassword=password addnode 172.17.0.3 add
-bitcoin-cli -regtest --rpcuser=bob --rpcpassword=password addnode 172.17.0.2 add
+bitcoin-cli -regtest --rpcuser=alice --rpcpassword=password addnode <bob IP> add
+bitcoin-cli -regtest --rpcuser=bob --rpcpassword=password addnode <alice IP> add
 
 
 Générer une adresse pour Alice:
@@ -29,11 +28,11 @@ Générer une adresse pour bob
 bitcoin-cli -regtest --rpcuser=bob --rpcpassword=password getnewaddress "bob"
 
 Générer 50 blocs pour alice:
-bitcoin-cli -regtest --rpcuser=alice --rpcpassword=password generatetoaddress 50 2N5jXENX3Dz9LSoLYQ6AnxV9UHk9NL3JHC9
+bitcoin-cli -regtest --rpcuser=alice --rpcpassword=password generatetoaddress 50 <alice address>
 
 Payer Bob:
-bitcoin-cli -regtest --rpcuser=alice --rpcpassword=password sendtoaddress "2MyQjbVonDXQW3qyPfbWzaBq5MZrRp7J6vA" 30.0
+bitcoin-cli -regtest --rpcuser=alice --rpcpassword=password sendtoaddress <bob address> 30.0
 Consulter la transaction dans le memory pool (pourquoi?)
 
 Générer 6 blocs pour bob:
-bitcoin-cli -regtest --rpcuser=bob --rpcpassword=password generate 6
+bitcoin-cli -regtest --rpcuser=bob --rpcpassword=password generatetoaddress 6 <bob address>
