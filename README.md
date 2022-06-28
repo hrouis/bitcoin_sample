@@ -21,14 +21,17 @@
 
 * Connexion entre bob et Alice
 > bitcoin-cli -regtest --rpcuser=alice --rpcpassword=password addnode <em>[bob IP]</em> add
+>
 > bitcoin-cli -regtest --rpcuser=bob --rpcpassword=password addnode <em>[alice IP]</em> add
 
 * Connexion entre Alice et Charles
 > bitcoin-cli -regtest --rpcuser=alice --rpcpassword=password addnode <em>[charles IP]</em> add
+>
 > bitcoin-cli -regtest --rpcuser=charles --rpcpassword=password addnode <em>[alice IP]</em> add
 
 * Connexion entre Bob et Charles
 > bitcoin-cli -regtest --rpcuser=charles --rpcpassword=password addnode <em>[bob IP]</em> add
+>
 > bitcoin-cli -regtest --rpcuser=bob --rpcpassword=password addnode <em>[charles IP]</em> add
 
 
