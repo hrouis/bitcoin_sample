@@ -1,7 +1,7 @@
 FROM bitcoin-install
 
-COPY conf/bitcoin_bob_node.conf /root/.bitcoin/bitcoin.conf
+COPY ./conf/bitcoin_bob_node.conf /root/.bitcoin/bitcoin.conf
 
-EXPOSE 18445/tcp
+EXPOSE 18446/tcp
 
 ENTRYPOINT ["/usr/local/bin/bitcoind"]

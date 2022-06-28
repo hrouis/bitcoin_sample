@@ -15,7 +15,7 @@ RUN apk update && apk add git \
                           libressl-dev \ 
                           libevent-dev 
 
-RUN git clone https://github.com/bitcoin/bitcoin --branch v23.0 --single-branch
+RUN git clone https://github.com/bitcoin/bitcoin --branch v0.19.2 --single-branch
 RUN (cd bitcoin  && ./autogen.sh && \
                       ./configure --disable-tests \
                       --disable-bench --disable-static  \
