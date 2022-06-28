@@ -1,0 +1,7 @@
+FROM bitcoin-install
+
+COPY ./conf/bitcoin_charles_node.conf /root/.bitcoin/bitcoin.conf
+
+EXPOSE 18447/tcp
+
+ENTRYPOINT ["/usr/local/bin/bitcoind"]
